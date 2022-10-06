@@ -28,7 +28,7 @@ public class Repository<T> : IRepository<T> where T : class
     {
         IQueryable<T> query = _dbSet;
         if (!tracked)
-            query = query.AsNoTracking();
+            query = query.AsNoTracking(); //AsNoTracking is used to avoid tracking of the entity
         if(filter is not null)
             query = query.Where(filter);
         return await query.FirstOrDefaultAsync();
