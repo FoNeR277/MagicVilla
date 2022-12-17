@@ -1,19 +1,17 @@
-using AutoMapper;
-using MagicVilla_API.Models;
-using MagicVilla_API.Models.Dto;
+﻿using AutoMapper;
+using MagicVilla_Web.Models.Dto;
 
-namespace MagicVilla_API;
-
-public class MappingConfig : Profile
+namespace MagicVilla_Web
 {
-    public MappingConfig()
+    public class MappingConfig : Profile
     {
-        CreateMap<Villa, VillaDTO>().ReverseMap();
-        CreateMap<Villa, VillaCreateDTO>().ReverseMap();
-        CreateMap<Villa, VillaUpdateDTO>().ReverseMap();
-        
-        CreateMap<VillaNumber, VillaNumberDto>().ReverseMap();
-        CreateMap<VillaNumber, VillaNumberCreateDto>().ReverseMap();
-        CreateMap<VillaNumber, VillaNumberUpdateDto>().ReverseMap();
+        public MappingConfig()
+        {
+            CreateMap<VillaDTO,VillaCreateDTO>().ReverseMap();
+            CreateMap<VillaDTO, VillaUpdateDTO>().ReverseMap();
+
+            CreateMap<VillaNumberDTO, VillaNumberCreateDTO>().ReverseMap();
+            CreateMap<VillaNumberDTO, VillaNumberUpdateDTO>().ReverseMap();
+        }
     }
 }

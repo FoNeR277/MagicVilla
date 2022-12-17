@@ -1,11 +1,12 @@
-using System.Net;
+﻿using System.Net;
 
-namespace MagicVilla_API.Models;
-
-public class APIResponse
+namespace MagicVilla_Web.Models
 {
-    public HttpStatusCode StatusCode { get; set; }
-    public bool IsSuccess { get; set; } = true;
-    public List<string>? ErrorMessages { get; set; }
-    public object Result { get; set; }
+    public class APIResponse
+    {
+        public HttpStatusCode StatusCode { get; set; }
+        public bool IsSuccess { get; set; } = true;
+        public List<string> ErrorMessages { get; set; }
+        public object Result { get; set; }
+    }
 }
